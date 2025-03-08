@@ -14,13 +14,21 @@ namespace BancoLilian
 
         public double Depositar(double ValorDeposito)
         {
+            Console.WriteLine("Depósito realizado com sucesso!");
             Saldo += ValorDeposito;
             return Saldo;
         }
 
         public double Sacar(double ValorSaque)
         {
-            Saldo -= ValorSaque;
+            if(Saldo >= ValorSaque)
+            {
+                Console.WriteLine("Saque realizado com sucesso!");
+                Saldo -= ValorSaque;
+                return Saldo;
+            }
+            
+            Console.WriteLine("Saldo insuficiente!");
             return Saldo;
         }
 

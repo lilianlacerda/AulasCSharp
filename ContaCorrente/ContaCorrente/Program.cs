@@ -10,7 +10,7 @@
             Console.WriteLine(titular1.ExibirSaldo());
             Console.WriteLine("\n");
 
-            while (menu > 0 && menu < 3)
+            while (menu > 0 && menu < 4)
             {
                 Console.WriteLine("Qual operação deseja realizar? ");
                 Console.WriteLine("1 - Realizar um depósito");
@@ -25,7 +25,9 @@
                         {
                             Console.WriteLine("Digite o valor que deseja depositar: ");
                             double valorDeposito = double.Parse(Console.ReadLine());
+                            Console.Clear();
                             titular1.Depositar(valorDeposito);
+                            
 
                             Console.WriteLine(titular1.ExibirSaldo());
                             Console.WriteLine("\n");
@@ -35,7 +37,9 @@
                         {
                             Console.WriteLine("Digite o valor que deseja sacar: ");
                             double valorSaque = double.Parse(Console.ReadLine());
+                            Console.Clear();
                             titular1.Sacar(valorSaque);
+                            
 
                             Console.WriteLine(titular1.ExibirSaldo());
                             Console.WriteLine("\n");
@@ -43,6 +47,7 @@
                         }
                     case 3:
                         {
+                            Console.Clear();
                             Console.WriteLine(titular1.ExibirSaldo());
                             Console.WriteLine("\n");
                             break;
