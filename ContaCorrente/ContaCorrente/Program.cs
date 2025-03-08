@@ -8,7 +8,7 @@
 
             ContaCorrente titular1 = new ContaCorrente();
 
-            while (menu > 0 && menu < 6)
+            while (menu > 0 && menu < 5)
             {
                 Console.WriteLine("Qual operação deseja realizar? ");
                 Console.WriteLine("1 - Realizar um depósito");
