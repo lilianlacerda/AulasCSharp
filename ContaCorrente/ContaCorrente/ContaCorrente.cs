@@ -14,8 +14,13 @@ namespace BancoLilian
 
         public double Depositar(double ValorDeposito)
         {
-            Console.WriteLine("Depósito realizado com sucesso!");
-            Saldo += ValorDeposito;
+            if(ValorDeposito >= 0)
+            {
+                Console.WriteLine("Depósito realizado com sucesso!");
+                Saldo += ValorDeposito;
+                return Saldo;
+            }
+            Console.WriteLine("Não é possível depositar um valor negativo");
             return Saldo;
         }
 
