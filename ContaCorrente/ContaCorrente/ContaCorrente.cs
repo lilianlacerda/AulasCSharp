@@ -21,13 +21,13 @@ namespace BancoLilian
 
         public double Sacar(double ValorSaque)
         {
-            if(Saldo >= ValorSaque)
+            if (Saldo >= ValorSaque)
             {
                 Console.WriteLine("Saque realizado com sucesso!");
                 Saldo -= ValorSaque;
                 return Saldo;
             }
-            
+
             Console.WriteLine("Saldo insuficiente!");
             return Saldo;
         }
@@ -35,6 +35,11 @@ namespace BancoLilian
         public string ExibirSaldo()
         {
             return $"Saldo Atual: {Saldo}";
+        }
+
+        public string ExibirInformacoes()
+        {
+            return $"Número da conta: {Numero}\nTitular: {Titular}\nSaldo: {Saldo}";
         }
     }
 }
