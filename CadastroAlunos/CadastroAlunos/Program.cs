@@ -19,7 +19,7 @@
                 switch (opcao)
                 { 
                     case 1:
-                        { 
+                    { 
                     Console.WriteLine("Digite o nome do aluno: ");
                     string nome = Console.ReadLine();
                     Console.WriteLine("Digite a matrícula do aluno: ");
@@ -38,10 +38,10 @@
 
                     Console.WriteLine("\nAluno cadastrado com sucesso!\n");
                     break;
-                        }
+                    }
 
                     case 2:
-                        {
+                    {
                             foreach (Alunos aluno in listaAlunosCadastrados)
                             {
                                 Console.WriteLine("Nome: " + aluno.nome);
@@ -52,17 +52,11 @@
                                 Console.WriteLine("Telefone: " + aluno.telefone);
                                 Console.WriteLine("\n");
                             }
+                            break;
                         }
                 }
              }
 
-                //Console.WriteLine("Deseja Cadastrar outro aluno?");
-                //Console.WriteLine("1 - Sim");
-                //Console.WriteLine("2 - Listar os alunos cadastrados");
-                //Console.WriteLine("0 - Sair");
-                //opcao = int.Parse(Console.ReadLine());
-
             }
         }
     }
-}
