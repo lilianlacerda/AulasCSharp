@@ -4,59 +4,64 @@
     {
         static void Main(string[] args)
         {
-            int opcao = 1;
-            List<Alunos> listaAlunosCadastrados = new List<Alunos>();
+            ValidarDados validar = new ValidarDados();
+            List<Alunos> listaAlunos = new List<Alunos>();
 
-            while (opcao >= 1 && opcao <= 2)
+            while(true)
             {
-                Console.WriteLine("Bem-vindo ao sistema de cadastro de alunos!");
-                Console.WriteLine("O que deseja fazer?");
-                Console.WriteLine("1 - Cadastrar aluno");
-                Console.WriteLine("2 - Mostrar alunos cadastrados");
+                   Console.WriteLine("Cadastro de Alunos");
+                   Console.WriteLine("1 - Cadastrar Aluno");
+                   Console.WriteLine("2 - Listar Alunos");
+                   Console.WriteLine("0 - Sair");
+                   int opcao = int.Parse(Console.ReadLine());
 
-                opcao = int.Parse(Console.ReadLine());
+                   switch (opcao)
+                   {
+                       case 1:
+                           {
+                               Console.WriteLine("Digite o nome do aluno: ");
+                               string nome = Console.ReadLine();
+                               Console.WriteLine("Digite o curso do aluno: ");
+                               string curso = Console.ReadLine();
+                               Console.WriteLine("Digite o email do aluno: ");
+                               string email = Console.ReadLine();
+                               validar.ValidarEmail(email);
+                               Console.WriteLine("Digite o telefone do aluno: ");
+                               string telefone = Console.ReadLine();
 
-                switch (opcao)
-                { 
-                    case 1:
-                    { 
-                    Console.WriteLine("Digite o nome do aluno: ");
-                    string nome = Console.ReadLine();
-                    Console.WriteLine("Digite a matrícula do aluno: ");
-                    string matricula = Console.ReadLine();
-                    Console.WriteLine("Digite a data de nascimento do aluno: ");
-                    string dataNascimento = Console.ReadLine();
-                    Console.WriteLine("Digite o curso do aluno: ");
-                    string curso = Console.ReadLine();
-                    Console.WriteLine("Digite o email do aluno: ");
-                    string email = Console.ReadLine();
-                    Console.WriteLine("Digite o telefone do aluno: ");
-                    string telefone = Console.ReadLine();
+                               Alunos alunos = new Alunos(nome, curso, email, telefone);
 
-                    Alunos aluno = new Alunos(nome, matricula, dataNascimento, curso, email, telefone);
-                    listaAlunosCadastrados.Add(aluno);
+                               listaAlunos.Add(alunos);
+                               Console.WriteLine("\nAluno cadastrado com sucesso!\n");
+                               //bool hasAluno = listaAlunos.Contains(alunos.Curso);
 
-                    Console.WriteLine("\nAluno cadastrado com sucesso!\n");
-                    break;
-                    }
+                           break;
+                           }
+                       case 2:
+                       {
+                           foreach (Alunos aluno in listaAlunos)
+                           {
+                               Console.WriteLine("Nome: " + aluno.Nome);
+                               Console.WriteLine("Curso: " + aluno.Curso);
+                               Console.WriteLine("Email: " + aluno.Email);
+                               Console.WriteLine("Telefone: " + aluno.Telefone);
+                               Console.WriteLine("---------------");
+                               Console.WriteLine("\n");
+                           }
+                           break;
+                       }
+                       case 0:
+                       {
+                           Console.WriteLine("Obrigado por usar o sistema!\n");
+                           return;
+                       }
+                       default:
+                       {
+                           Console.WriteLine("Opção inválida\n");
+                           break;
+                       }
+                   }
+            }   
 
-                    case 2:
-                    {
-                            foreach (Alunos aluno in listaAlunosCadastrados)
-                            {
-                                Console.WriteLine("Nome: " + aluno.nome);
-                                Console.WriteLine("Matrícula: " + aluno.matricula);
-                                Console.WriteLine("Data de Nascimento: " + aluno.dataNascimento);
-                                Console.WriteLine("Curso: " + aluno.curso);
-                                Console.WriteLine("Email: " + aluno.email);
-                                Console.WriteLine("Telefone: " + aluno.telefone);
-                                Console.WriteLine("\n");
-                            }
-                            break;
-                        }
-                }
-             }
-
-            }
         }
-    }
+ }  }

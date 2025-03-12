@@ -8,21 +8,18 @@ namespace CadastroAlunos
 {
     internal class Alunos
     {
-        public string nome;
-        public string matricula;
-        public string dataNascimento;
-        public string curso;
-        public string email;
-        public string telefone;
+        public string Nome;
+        public string Matricula;
+        public string Curso;
+        public string Email;
+        public string Telefone;
 
-        public Alunos(string nome, string matricula, string dataNascimento, string curso, string email, string telefone)
+        public Alunos(string nome, string curso, string email, string telefone)
         {
-            nome = nome;
-            matricula = matricula;
-            dataNascimento = dataNascimento;
-            curso = curso;
-            email = email;
-            telefone = telefone;
+            Nome = nome;
+            Curso = curso;
+            Email = email;
+            Telefone = telefone;
         }
     }
 }
